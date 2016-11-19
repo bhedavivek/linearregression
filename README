@@ -1,0 +1,2 @@
+This project implements Stocastic Gradient Descent based Linear Regression, Closed Form solution for Linear Regression for the Learning To Rank Dataset and a synthetic Dataset
+Configuration in main.py was found to provide best performance for a reasonable training time
