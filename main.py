@@ -12,6 +12,7 @@ class dataSet():
 		self.validation={'x_matrix':[],'target_vector':[]}
 		self.testing={'x_matrix':[],'target_vector':[]}
 
+#Partitioning Data Set into Training, Validation and Testing Sets
 def partition(x_matrix,target_vector):
 	tem=dataSet()
 	tem.training['x_matrix']=[]
@@ -173,6 +174,7 @@ def testError(x_matrix,target_vector,w_star, lamb,mu_matrix, sigma_matrix):
 		err=err+(target_vector[i] - np.dot(w_star,np.transpose(phi_x(x_matrix[i],mu_matrix,sigma_matrix))))**2
 	return math.sqrt(err/len(x_matrix))
 
+#Loading Data from Input CSV Files(Synthetic Dataset)
 x_matrix=[]
 target_vector=[]
 with open('input.csv', 'rU') as csvfile:
@@ -189,6 +191,7 @@ with open('output.csv', 'rU') as csvfile:
 			target_vector.append(float(item))
 synthetic_part = partition(x_matrix,target_vector)
 
+#Loading Data from Input CSV Files(Learning to Rank Dataset)
 x_matrix=[]
 target_vector=[]
 with open('Querylevelnorm_X.csv', 'rU') as csvfile:
